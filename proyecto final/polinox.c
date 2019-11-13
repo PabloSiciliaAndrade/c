@@ -1,14 +1,11 @@
-#ifndef "polinox.h"
-#define "polinox.h"
+#include <stdio.h>
+#include "polinox.h"
 
+polinomio polinomio1;
 
-typedef struct monomios{
-	float coeficiente;
-	char variable;
-	int exponente;
-}monomio;
-
-typedef struct polinomio{
-	monomio monomio_mayor;
-	monomio siguiente;
-}polinomio;
+void leer_monomio_mayor(polinomio polinomio1){
+	scanf("%g %c %d", & polinomio1.monomio_mayor.coeficiente, & polinomio1.monomio_mayor.variable, & polinomio1.monomio_mayor.exponente);
+}
+void imprimir_monomio_mayor(polinomio polinomio1){
+	printf("el polinomio es: %g %c^%d", polinomio1.monomio_mayor.coeficiente, polinomio1.monomio_mayor.variable, polinomio1.monomio_mayor.exponente );
+}
