@@ -2,12 +2,12 @@
 #define POLINOX_H
 
 typedef struct monomios monomio;
-typedef struct monomios {
+struct monomios {
 	float coeficiente;
 	char variable;
 	int exponente;
 	monomio *siguiente;
-}monomio;
+};
 
 typedef struct polinomios {
 	monomio monomio_mayor;
