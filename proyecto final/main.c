@@ -3,11 +3,10 @@
 #include "polinox.h"
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
-Polinomio polinomio1;
-polinomio1.monomio_mayor.coeficiente = 1;
-polinomio1.siguiente = NULL;
+Polinomio *polinomio_inicial;
+
 int main(int argc, char *argv[]) {
-	leer_monomio_mayor(polinomio1);
-	imprimir_monomio_mayor(polinomio1);
+	leer_monomio_mayor(*polinomio_inicial);
+	imprimir_monomio_mayor(*polinomio_inicial);
 	return 0;
 }
