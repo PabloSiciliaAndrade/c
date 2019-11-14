@@ -11,10 +11,10 @@ typedef struct polinomios {
 	monomio monomio_mayor;
 	monomio *siguiente;
 	int termino_independiente;
-}polinomio;
+}Polinomio;
 
 void leer_polinomio();
-void leer_monomio_mayor(polinomio polinomio1);
-void imprimir_monomio_mayor(polinomio polinomio1);
+void leer_monomio_mayor(Polinomio polinomio1);
+void imprimir_monomio_mayor(Polinomio polinomio1);
 
 #endif
