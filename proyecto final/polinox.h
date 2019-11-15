@@ -21,4 +21,6 @@ void imprimir_polinomio(Polinomio *polinomio);
 void leer_monomio(monomio *monomio1);
 void freeMemory(Polinomio *polinomio);
 void ordenar(Polinomio *polinomio);
+void sumar_polinomios(Polinomio *polinomio1, Polinomio *polinomio2, Polinomio *PolinomioR);
+void sumar_monomios(monomio *monomio1, monomio * monomio2, monomio *monomioR);
 #endif
