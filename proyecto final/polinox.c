@@ -20,7 +20,7 @@ void leer_polinomio(Polinomio *polinomio){
 	
 }
 void imprimir_monomio_mayor(monomios monomio){
-	printf("el polinomio es: %g %c^%d",polinomio1.monomio_mayor->coeficiente, polinomio1.monomio_mayor->variable, polinomio1.monomio_mayor->exponente );
+	printf("el polinomio es: %g %c^%d",monomio.monomio_mayor->coeficiente, monomio.monomio_mayor->variable, monomio.monomio_mayor->exponente );
 }
 void imprimir_polinomio_mayor(Polinomio polinomio1){
 	printf("el polinomio es: %g %c^%d",polinomio1.monomio_mayor->coeficiente, polinomio1.monomio_mayor->variable, polinomio1.monomio_mayor->exponente );
