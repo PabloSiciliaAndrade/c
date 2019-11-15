@@ -13,8 +13,7 @@ int main(int argc, char *argv[]) {
 	imprimir_polinomio(polinomio1);
 	ordenar(polinomio1);
 	imprimir_polinomio(polinomio1);
-	
-	//leer_monomio_mayor(*polinomio1);
-	
+	freeMemory(polinomio1);
+
 	return 0;
 }

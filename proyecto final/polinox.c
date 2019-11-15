@@ -61,6 +61,21 @@ void ordenar(Polinomio *polinomio){
 	
 	
 }
+void freeMemory(Polinomio *polinomio){
+	int i, j;
+	monomio *Monox = polinomio->Monomio_menor;
+	for (i = 0; i < polinomio->cantidad_de_monomios; ++i)
+	{
+		for (j = 0; j < polinomio->cantidad_de_monomios-i; ++j)
+		{
+			if (Monox->siguiente == NULL)
+			{
+				free(Monox);
+			}
+			Monox = Monox->siguiente;
+		}
+	}
+}
 
 void menu (){
 	printf("1: sumar polinomios \n");
