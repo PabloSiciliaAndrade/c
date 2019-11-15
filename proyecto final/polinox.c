@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include "polinox.h"
 
-void leer_monomio(float coeficiente, char variable, int exponente){
-	monomios monomio1
-	scanf("%g %c %d", &monomio1.coeficiente, &monomio1.variable, &monomio1.exponente);
+void leer_monomio(monomio *monomio1){
+	scanf("%g %c %d", &monomio1->coeficiente, &monomio1->variable, &monomio1->exponente);
 	
 }
 void imprimir_monomio_mayor(Polinomio polinomio1){
