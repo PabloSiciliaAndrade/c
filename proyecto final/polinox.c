@@ -41,29 +41,24 @@ void imprimir_polinomio(Polinomio *polinomio){
 void ordenar(Polinomio *polinomio){
 	monomio *Monoxi;
 	monomio *Monoxj;
-	int i, j, k;
 	monomio Monoxt;
-	for (k = 0,Monoxi = polinomio->Monomio_menor; k < polinomio->cantidad_de_monomios; ++k)
+	int i, j, k;
+	for (i = 0; i < polinomio->cantidad_de_monomios - 1; ++i)
 	{
-		for (i = 0; i < polinomio->cantidad_de_monomios -1; ++i)
+		Monoxi = polinomio->Monomio_menor;
+		Monoxj = polinomio->Monomio_menor;
+		for (j = 0; j < polinomio->cantidad_de_monomios - i - 1; ++j)
 		{
-			for (j = 0 + i, Monoxj = polinomio->Monomio_menor; j < polinomio->cantidad_de_monomios -1; ++j)
+			if (Monoxj->exponente > Monoxj->siguiente->exponente)
 			{
-
-				if (Monoxj->siguiente->exponente > Monoxi->exponente)
-				{
-					Monoxt.coeficiente = Monoxi->coeficiente, Monoxt.exponente = Monoxi->exponente;
-					Monoxi->coeficiente = Monoxj->coeficiente, Monoxi->exponente = Monoxj->exponente;
-					Monoxj->coeficiente = Monoxt.coeficiente, Monoxj->exponente = Monoxt.exponente;
-				}
-				Monoxj = Monoxj->siguiente;
-
+				Monoxt.exponente = Monoxj->siguiente->exponente, Monoxt.coeficiente = Monoxj->siguiente->coeficiente;
+				Monoxj->siguiente->exponente = Monoxj->exponente, Monoxj->siguiente->coeficiente = Monoxj->coeficiente;
+				Monoxj->exponente = Monoxt.exponente, Monoxj->coeficiente = Monoxt.coeficiente;
 			}
+			Monoxj = Monoxj->siguiente;
 		}
-
-		Monoxi = Monoxi->siguiente;
-		
 	}
+	
 	
 }
 
