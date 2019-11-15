@@ -14,6 +14,6 @@ int main(int argc, char *argv[]) {
 	
 	
 	//leer_monomio_mayor(*polinomio1);
-	imprimir_monomio_mayor(*polinomio1);
+	imprimir_polinomio(polinomio1);
 	return 0;
 }

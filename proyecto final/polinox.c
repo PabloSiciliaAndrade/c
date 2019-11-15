@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "polinox.h"
 
 void leer_monomio(monomio *monomio1){
@@ -19,11 +20,23 @@ void leer_polinomio(Polinomio *polinomio){
 	
 	
 }
-void imprimir_monomio_mayor(monomios monomio){
-	printf("el polinomio es: %g %c^%d",monomio.monomio_mayor->coeficiente, monomio.monomio_mayor->variable, monomio.monomio_mayor->exponente );
+void imprimir_monomio(monomio *monomio){
+	if (monomio->coeficiente < 0)
+	{
+		printf("%g %c^%d ",monomio->coeficiente, monomio->variable, monomio->exponente );
+	}else{
+		printf(" +%g %c^%d ",monomio->coeficiente, monomio->variable, monomio->exponente );
+	}
 }
-void imprimir_polinomio_mayor(Polinomio polinomio1){
-	printf("el polinomio es: %g %c^%d",polinomio1.monomio_mayor->coeficiente, polinomio1.monomio_mayor->variable, polinomio1.monomio_mayor->exponente );
+void imprimir_polinomio(Polinomio *polinomio){
+	monomio *Monox = polinomio->monomio_mayor; 
+	int i;
+	for (i = 0; i < polinomio->cantidad_de_monomios; ++i)
+	{
+		imprimir_monomio(Monox);
+		Monox = Monox->siguiente;
+	}
+	
 }
 void menu (){
 	printf("1: sumar polinomios \n");

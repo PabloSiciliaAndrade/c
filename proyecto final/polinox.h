@@ -17,8 +17,8 @@ typedef struct polinomios {
 
 void leer_polinomio(Polinomio *polinomio);
 void leer_monomio_mayor(Polinomio *polinomio1);
-void imprimir_monomio_mayor(monomios monomio);
-void imprimir_polinomio_mayor(Polinomio polinomio1);
+void imprimir_monomio(monomio *monomio);
+void imprimir_polinomio(Polinomio *polinomio);
 void leer_monomio(monomio *monomio1);
 void freeMemory(Polinomio *polinomio);
 #endif
