@@ -41,10 +41,12 @@ void imprimir_polinomio(Polinomio *polinomio){
 	printf("\n");
 }
 void ordenar(Polinomio *polinomio){
+	Polinomio * polinomioT;
 	monomio *Monoxi;
 	monomio *Monoxj;
 	monomio Monoxt;
-	int i, j, k;
+	monomio *MonomioTT;
+	int i, j, k, expo = 0;
 	for (i = 0; i < polinomio->cantidad_de_monomios - 1; ++i)
 	{
 		Monoxi = polinomio->Monomio_menor;
@@ -57,10 +59,47 @@ void ordenar(Polinomio *polinomio){
 				Monoxj->siguiente->exponente = Monoxj->exponente, Monoxj->siguiente->coeficiente = Monoxj->coeficiente;
 				Monoxj->exponente = Monoxt.exponente, Monoxj->coeficiente = Monoxt.coeficiente;
 			}
+			for (k = 0; k < polinomio->cantidad_de_monomios + i; ++k)
+			{
+				if (Monoxj->exponente >= expo)
+				{
+					expo = Monoxj->exponente;
+					printf("%d\n",expo );
+				}
+				
+			}
 			Monoxj = Monoxj->siguiente;
 		}
 	}
+	MonomioTT = polinomioT->Monomio_menor; 
+	for (i = 0; i < expo; ++i)
+	{
+		Monoxj = polinomio->Monomio_menor;
+		for ( j = 0; j < expo; ++j)
+		{
+			if (i = Monoxj->exponente)
+			{
+				MonomioTT->exponente = Monoxj->exponente;
+				MonomioTT->coeficiente = Monoxj->coeficiente;
+			}else{
+				MonomioTT->exponente = i;
+				MonomioTT->coeficiente = 0;
+				}
+			Monoxj = Monoxj->siguiente;
+		}
+		MonomioTT = MonomioTT->siguiente;
+	}
+	MonomioTT = polinomioT->Monomio_menor; 
+	Monoxj = polinomio->Monomio_menor;
 	
+	for (i = 0; i < expo; ++i)
+	{
+		Monoxj->exponente = MonomioTT->exponente;  
+		Monoxj->coeficiente =MonomioTT->coeficiente;
+		Monoxj = Monoxj->siguiente;
+		MonomioTT = MonomioTT->siguiente;
+	}
+
 	
 }
 void freeMemory(Polinomio *polinomio){
