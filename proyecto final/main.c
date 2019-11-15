@@ -10,6 +10,8 @@ int main(int argc, char *argv[]) {
 	polinomio1 = (Polinomio *) malloc(sizeof(Polinomio));
 	polinomio1->monomio_mayor = (monomio*) malloc(sizeof(monomio));
 	leer_polinomio(polinomio1);
+
+	
 	
 	//leer_monomio_mayor(*polinomio1);
 	imprimir_monomio_mayor(*polinomio1);
