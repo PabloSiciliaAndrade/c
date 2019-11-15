@@ -10,7 +10,7 @@ struct monomios {
 };
 
 typedef struct polinomios {
-	monomio monomio_mayor;
+	monomio *monomio_mayor;
 	int termino_independiente;
 }Polinomio;
 
