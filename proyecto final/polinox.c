@@ -3,13 +3,13 @@
 #include "polinox.h"
 
 void leer_monomio(monomio *monomio1){
-	printf("introdusca los valores de su monomio:\n" );
+	printf("introduzca los valores de su monomio:\n" );
 	scanf("%g %d", &monomio1->coeficiente, &monomio1->exponente);
 }
 
 
 void leer_polinomio(Polinomio *polinomio){
-	printf("introdusca la cantidad de monomios que tiene su polinomio\n");
+	printf("introduzca la cantidad de monomios que tiene su polinomio\n");
 	scanf("%d", &polinomio->cantidad_de_monomios);
 	int i;
 	monomio *Monox = polinomio->Monomio_menor; 
@@ -81,16 +81,20 @@ void ordenar(Polinomio *polinomio){
 
 	for (i = 0; i < polinomio->cantidad_de_monomios; ++i)
 	{
-		for (j = 0; i < polinomio->potencia; ++i)
+		printf("%d\n",polinomio->cantidad_de_monomios);
+		for (j = 0; j <= polinomio->potencia; ++j)
 		{
-			if (Monoxt->exponente = Monox->exponente)
+			if (Monoxt->exponente == Monox->exponente)
 			{
+				printf("los datos para la potencia %d\n",j);
 				Monoxt->coeficiente = Monox->coeficiente;
 			}
 			else{
 				Monoxt->coeficiente = 0;
+				printf("no hay datos para la potencia %d\n",j);
 			}
 			Monoxt = Monoxt->siguiente;
+			printf("%f\n",Monoxt->coeficiente);
 		}
 		Monox = Monox->siguiente;
 	}
@@ -101,7 +105,7 @@ void ordenar(Polinomio *polinomio){
 
 	
 
-	for (i = 0; i < polinomio->potencia; ++i)
+	for (i = 0; i <= polinomio->potencia; ++i)
 	{
 		Monox->coeficiente = Monoxt->coeficiente;
 		Monox->exponente = Monoxt->exponente;

@@ -28,7 +28,7 @@ int main(int argc, char *argv[]) {
 	//sumar_polinomios(polinomio1, polinomio2, polinomioR);
 	//imprimir_polinomio(polinomioR);
 
-	freeMemory(polinomio1);
+	//freeMemory(polinomio1);
 	//freeMemory(polinomio2);
 	//freeMemory(polinomioR);
 
