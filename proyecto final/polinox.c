@@ -1,16 +1,35 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "polinox.h"
 
-Polinomio polinomio1;
+void leer_monomio(monomio *monomio1){
+	printf("introdusca los valores de su monomio:\n" );
+	scanf("%g %d", &monomio1->coeficiente, &monomio1->exponente);
+}
 
-void leer_monomio_mayor(polinomio polinomio1){
-	scanf("%g %c %d", & polinomio1.monomio_mayor.coeficiente, & polinomio1.monomio_mayor.variable, & polinomio1.monomio_mayor.exponente);
+
+void leer_polinomio(Polinomio *polinomio){
+	printf("introdusca la cantidad de monomios que tiene su polinomio\n");
+	scanf("%d", &polinomio->cantidad_de_monomios);
+	int i;
+	monomio *Monox = polinomio->Monomio_menor; 
+	for (i = 0; i < polinomio->cantidad_de_monomios; ++i)
+	{
+		Monox->siguiente = (monomio*) malloc(sizeof(monomio));
+		leer_monomio(Monox);
+		Monox = Monox->siguiente;
+	}
 }
-void imprimir_monomio_mayor(polinomio polinomio1){
-	printf("el polinomio es: %g %c^%d", polinomio1.monomio_mayor.coeficiente, polinomio1.monomio_mayor.variable, polinomio1.monomio_mayor.exponente );
+
+
+void imprimir_monomio(monomio *monomio){
+	if (monomio->coeficiente < 0)
+	{
+		printf("%g X^%d ",monomio->coeficiente, monomio->exponente );
+	}else{
+		printf(" +%g X^%d ",monomio->coeficiente, monomio->exponente );
+	}
 }
-<<<<<<< Updated upstream
-=======
 
 
 void imprimir_polinomio(Polinomio *polinomio){
@@ -197,8 +216,9 @@ void filecopy(FILE*, FILE*){
 void filecopy(FILE *ifp, FILE *ofp)
 {
 	int c;
+	Polinomio polinomio1;
 	while ((c=getp(ifp))!=EOF)
-		putc(c, ofp);
+		putc(c, polinomio1);
 }
 
 
@@ -212,7 +232,6 @@ void filecopy(FILE *ifp, FILE *ofp)
 
 
 
->>>>>>> Stashed changes
 void menu (){
 	printf("1: sumar polinomios \n");
 	printf("2: restar polinomios \n");
