@@ -2,17 +2,31 @@
 Order=0,1,2
 Focused=2
 [Editor_0]
+<<<<<<< Updated upstream
 CursorCol=2
 CursorRow=12
 TopLine=1
 LeftChar=1
 [Editor_1]
 CursorCol=21
+=======
+CursorCol=1
+CursorRow=7
+TopLine=1
+LeftChar=1
+[Editor_1]
+CursorCol=18
+>>>>>>> Stashed changes
 CursorRow=5
 TopLine=1
 LeftChar=1
 [Editor_2]
 CursorCol=2
+<<<<<<< Updated upstream
 CursorRow=8
 TopLine=1
+=======
+CursorRow=46
+TopLine=11
+>>>>>>> Stashed changes
 LeftChar=1
