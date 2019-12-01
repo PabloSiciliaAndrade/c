@@ -12,6 +12,7 @@ typedef struct polinomios {
 	monomio *Monomio_menor;
 	int cantidad_de_monomios;
 	int termino_independiente;
+	int potencia;
 }Polinomio;
 
 void leer_polinomio(Polinomio *polinomio);

@@ -12,22 +12,25 @@ int main(int argc, char *argv[]) {
 	leer_polinomio(polinomio1);
 	ordenar(polinomio1);
 
+	/*
 	Polinomio *polinomio2;
 	polinomio2 = (Polinomio *) malloc(sizeof(Polinomio));
 	polinomio2->Monomio_menor = (monomio*) malloc(sizeof(monomio));
 	leer_polinomio(polinomio2);
 	ordenar(polinomio2);
-
+	
 	Polinomio *polinomioR;
 	polinomioR = (Polinomio *) malloc(sizeof(Polinomio));
 	polinomioR->Monomio_menor = (monomio*) malloc(sizeof(monomio));
-
-	sumar_polinomios(polinomio1, polinomio2, polinomioR);
-	imprimir_polinomio(polinomioR);
+	*/
+	
+	imprimir_polinomio(polinomio1);
+	//sumar_polinomios(polinomio1, polinomio2, polinomioR);
+	//imprimir_polinomio(polinomioR);
 
 	freeMemory(polinomio1);
-	freeMemory(polinomio2);
-	freeMemory(polinomioR);
+	//freeMemory(polinomio2);
+	//freeMemory(polinomioR);
 
 	return 0;
 }
