@@ -69,7 +69,8 @@ void ordenar(Polinomio *polinomio){
 	for (i = 0; i <= polinomio->potencia; ++i)
 	{
 		Monoxt->exponente = i;
-		printf("%d\n",i);
+		Monoxt->siguiente = (monomio*) malloc(sizeof(monomio));
+		printf("%d\n",Monoxt->exponente);
 		Monoxt = Monoxt->siguiente;
 	}
 	printf("polinomio temporal creado...\n");
@@ -106,12 +107,11 @@ void ordenar(Polinomio *polinomio){
 		Monox->exponente = Monoxt->exponente;
 
 		Monoxt = Monoxt->siguiente;
+		Monox->siguiente = (monomio*) malloc(sizeof(monomio));
 		Monox = Monox->siguiente;
 	}
 	polinomio->cantidad_de_monomios = polinomio->potencia;
 	printf("datos guardados en polinomio original \n");
-
-	freeMemory(polinomioT);
 	/*
 	monomio *Monoxi;
 	monomio *Monoxj;
