@@ -14,13 +14,6 @@ typedef struct polinomios {
 	int potencia;
 }Polinomio;
 
-typedef struct ListaDePolinomios lista;
-struct ListaDePolinomios {
-	Polinomio *polinomio;
-	int id_de_polinomio;
-	lista *siguiente_lista;
-};
-
 void reservar_memoria(Polinomio *polinomio);
 void leer_polinomio(Polinomio *polinomio);
 void leer_monomio_mayor(Polinomio *polinomio1);

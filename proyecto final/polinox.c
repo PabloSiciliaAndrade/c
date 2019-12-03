@@ -74,6 +74,7 @@ void ordenar(Polinomio *polinomio){
 	for (i = 0; i <= polinomio->potencia; ++i)
 	{
 		Monoxt->exponente = i;
+		Monoxt->coeficiente = 0;
 		Monoxt->siguiente = (monomio*) malloc(sizeof(monomio));
 		Monoxt = Monoxt->siguiente;
 	}
