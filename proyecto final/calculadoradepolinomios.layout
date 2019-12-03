@@ -3,15 +3,15 @@ Order=0,1,2
 Focused=2
 [Editor_0]
 <<<<<<< Updated upstream
-CursorCol=2
-CursorRow=12
+CursorCol=1
+CursorRow=7
 TopLine=1
 LeftChar=1
 [Editor_1]
-CursorCol=21
+CursorCol=1
 =======
 CursorCol=1
-CursorRow=7
+CursorRow=27
 TopLine=1
 LeftChar=1
 [Editor_1]
@@ -21,10 +21,10 @@ CursorRow=5
 TopLine=1
 LeftChar=1
 [Editor_2]
-CursorCol=2
+CursorCol=28
 <<<<<<< Updated upstream
-CursorRow=8
-TopLine=1
+CursorRow=220
+TopLine=190
 =======
 CursorRow=46
 TopLine=11
