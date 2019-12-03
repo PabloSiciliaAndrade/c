@@ -2,12 +2,6 @@
 #include <stdlib.h>
 #include "polinox.h"
 
-void reservar_memoria(Polinomio *polinomioT){
-	polinomioT = (Polinomio *) malloc(sizeof(Polinomio));
-	polinomioT->Monomio_menor = (monomio*) malloc(sizeof(monomio));
-}
-
-
 void leer_monomio(monomio *monomio1){
 	printf("introduzca los valores de su monomio:\n" );
 	scanf("%g %d", &monomio1->coeficiente, &monomio1->exponente);
@@ -135,28 +129,20 @@ void sumar_polinomios(Polinomio *polinomio1, Polinomio *polinomio2, Polinomio *p
 	Monox = polinomioR->Monomio_menor;
 	Monox1 = polinomio1->Monomio_menor;
 	Monox2 = polinomio2->Monomio_menor;
-	int i;
-	if (polinomio1->cantidad_de_monomios <= polinomio2->cantidad_de_monomios)
+	int i, j;
+	for (i = 0; i <= polinomio1->cantidad_de_monomios; ++i)
 	{
-		polinomioR->cantidad_de_monomios = polinomio2->cantidad_de_monomios;
-		for (i = 0; i < polinomio2->cantidad_de_monomios; ++i)
+		Monox = polinomioR->Monomio_menor;
+		Monox2 = polinomio2->Monomio_menor;
+		
+		for (j = 0; j <= polinomio2->cantidad_de_monomios; ++j)
 		{
-
+			Monox->siguiente = ((monomio*)malloc(sizeof(monomio)));
 			sumar_monomios(Monox1, Monox2, Monox);
 			Monox = Monox->siguiente;
-			Monox1 = Monox1->siguiente;
-			Monox2 = Monox2->siguiente;
-
-		}
-	}else{
-		polinomioR->cantidad_de_monomios = polinomio1->cantidad_de_monomios;
-		for (i = 0; i < polinomio1->cantidad_de_monomios; ++i)
-		{
-			sumar_monomios(Monox1, Monox2, Monox);
-			Monox = Monox->siguiente;
-			Monox1 = Monox1->siguiente;
 			Monox2 = Monox2->siguiente;
 		}
+		Monox1 = Monox1->siguiente;
 	}
 }
 
@@ -168,12 +154,20 @@ void sumar_monomios(monomio *monomio1, monomio *monomio2, monomio *monomioR){
 	monomioR->exponente = monomio1->exponente;
 	}
 }
-
-
 void menu (){
 	printf("1: sumar polinomios \n");
 	printf("2: restar polinomios \n");
 	printf("3: multiplicar polinomios \n");
 	printf("4: dividir monomio entre polinomio \n");
 	printf("5: salir \n");
+}
+void definir_polinomio_nuevo(Polinomio *polinomio){
+	polinomio = ((Polinomio*)malloc(sizeof(Polinomio)));
+	polinomio->Monomio_menor = ((monomio*)malloc(sizeof(monomio))); 
+	leer_polinomio(polinomio);
+	ordenar(polinomio);
+}
+void reservar_memoria(Polinomio *polinomio){
+	polinomio = ((Polinomio*)malloc(sizeof(Polinomio)));
+	polinomio->Monomio_menor = ((monomio*)malloc(sizeof(monomio)));
 }
