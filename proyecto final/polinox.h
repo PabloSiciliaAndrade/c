@@ -11,10 +11,17 @@ struct monomios {
 typedef struct polinomios {
 	monomio *Monomio_menor;
 	int cantidad_de_monomios;
-	int termino_independiente;
 	int potencia;
 }Polinomio;
 
+typedef struct ListaDePolinomios lista;
+struct ListaDePolinomios {
+	Polinomio *polinomio;
+	int id_de_polinomio;
+	lista *siguiente_lista;
+};
+
+void reservar_memoria(Polinomio *polinomio);
 void leer_polinomio(Polinomio *polinomio);
 void leer_monomio_mayor(Polinomio *polinomio1);
 void imprimir_monomio(monomio *monomio);

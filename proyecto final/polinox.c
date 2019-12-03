@@ -2,6 +2,12 @@
 #include <stdlib.h>
 #include "polinox.h"
 
+void reservar_memoria(Polinomio *polinomioT){
+	polinomioT = (Polinomio *) malloc(sizeof(Polinomio));
+	polinomioT->Monomio_menor = (monomio*) malloc(sizeof(monomio));
+}
+
+
 void leer_monomio(monomio *monomio1){
 	printf("introduzca los valores de su monomio:\n" );
 	scanf("%g %d", &monomio1->coeficiente, &monomio1->exponente);
@@ -35,7 +41,7 @@ void imprimir_monomio(monomio *monomio){
 void imprimir_polinomio(Polinomio *polinomio){
 	monomio *Monox = polinomio->Monomio_menor; 
 	int i;
-	for (i = 0; i < polinomio->cantidad_de_monomios; ++i)
+	for (i = 0; i <=  polinomio->cantidad_de_monomios; ++i)
 	{
 		imprimir_monomio(Monox);
 		Monox = Monox->siguiente;
@@ -58,8 +64,7 @@ void ordenar(Polinomio *polinomio){
 		Monox = Monox->siguiente;
 	}
 	polinomio->potencia = potencia;
-	// obtenemos el valor de la potencia del polinimio mas grande
-	printf("%d\n",polinomio->potencia);
+	// obtenemos el valor de la potencia mas grande
 	
 	Polinomio *polinomioT;
 	polinomioT = (Polinomio *) malloc(sizeof(Polinomio));
@@ -70,43 +75,31 @@ void ordenar(Polinomio *polinomio){
 	{
 		Monoxt->exponente = i;
 		Monoxt->siguiente = (monomio*) malloc(sizeof(monomio));
-		printf("%d\n",Monoxt->exponente);
 		Monoxt = Monoxt->siguiente;
 	}
-	printf("polinomio temporal creado...\n");
 	//creamos un polinomio temporal ordenado de menor a mayor
 
 	Monox = polinomio->Monomio_menor;
-	Monoxt = polinomioT->Monomio_menor;
-
 	for (i = 0; i < polinomio->cantidad_de_monomios; ++i)
 	{
-		printf("%d\n",polinomio->cantidad_de_monomios);
+		Monoxt = polinomioT->Monomio_menor;
 		for (j = 0; j <= polinomio->potencia; ++j)
 		{
 			if (Monoxt->exponente == Monox->exponente)
 			{
-				printf("los datos para la potencia %d\n",j);
 				Monoxt->coeficiente = Monox->coeficiente;
 			}
-			else{
-				Monoxt->coeficiente = 0;
-				printf("no hay datos para la potencia %d\n",j);
-			}
 			Monoxt = Monoxt->siguiente;
-			printf("%f\n",Monoxt->coeficiente);
 		}
 		Monox = Monox->siguiente;
 	}
-	printf("pasando datos a temporal...\n");
 
 	Monox = polinomio->Monomio_menor;
 	Monoxt = polinomioT->Monomio_menor;
 
-	
-
 	for (i = 0; i <= polinomio->potencia; ++i)
 	{
+
 		Monox->coeficiente = Monoxt->coeficiente;
 		Monox->exponente = Monoxt->exponente;
 
@@ -115,28 +108,6 @@ void ordenar(Polinomio *polinomio){
 		Monox = Monox->siguiente;
 	}
 	polinomio->cantidad_de_monomios = polinomio->potencia;
-	printf("datos guardados en polinomio original \n");
-	/*
-	monomio *Monoxi;
-	monomio *Monoxj;
-	
-	int i, j, k;
-	for (i = 0; i < polinomio->cantidad_de_monomios - 1; ++i)
-	{
-		Monoxi = polinomio->Monomio_menor;
-		Monoxj = polinomio->Monomio_menor;
-		for (j = 0; j < polinomio->cantidad_de_monomios - i - 1; ++j)
-		{
-			if (Monoxj->exponente > Monoxj->siguiente->exponente)
-			{
-				Monoxt.exponente = Monoxj->siguiente->exponente, Monoxt.coeficiente = Monoxj->siguiente->coeficiente;
-				Monoxj->siguiente->exponente = Monoxj->exponente, Monoxj->siguiente->coeficiente = Monoxj->coeficiente;
-				Monoxj->exponente = Monoxt.exponente, Monoxj->coeficiente = Monoxt.coeficiente;
-			}
-			Monoxj = Monoxj->siguiente;
-		}
-	}
-	*/
 }
 
 
