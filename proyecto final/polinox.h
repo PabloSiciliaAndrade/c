@@ -4,21 +4,25 @@
 typedef struct monomios monomio;
 struct monomios {
 	float coeficiente;
-	char variable;
 	int exponente;
 	monomio *siguiente;
 };
 
 typedef struct polinomios {
-	monomio monomio_mayor;
+	monomio *Monomio_menor;
+	int cantidad_de_monomios;
 	int termino_independiente;
+	int potencia;
 }Polinomio;
 
-void leer_polinomio();
-void leer_monomio_mayor(Polinomio polinomio1);
-void imprimir_monomio_mayor(Polinomio polinomio1);
-void menu();
-
-
-
+void leer_polinomio(Polinomio *polinomio);
+void leer_monomio_mayor(Polinomio *polinomio1);
+void imprimir_monomio(monomio *monomio);
+void imprimir_polinomio(Polinomio *polinomio);
+void leer_monomio(monomio *monomio1);
+void freeMemory(Polinomio *polinomio);
+void ordenar(Polinomio *polinomio);
+void sumar_polinomios(Polinomio *polinomio1, Polinomio *polinomio2, Polinomio *PolinomioR);
+void sumar_monomios(monomio *monomio1, monomio * monomio2, monomio *monomioR);
+void copiararchivo(ARCHIVO*, ARCHIVO*);
 #endif
