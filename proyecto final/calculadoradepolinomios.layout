@@ -7,7 +7,19 @@ CursorRow=12
 TopLine=1
 LeftChar=1
 [Editor_1]
+<<<<<<< Updated upstream
 CursorCol=21
+=======
+CursorCol=16
+=======
+CursorCol=1
+CursorRow=7
+TopLine=1
+LeftChar=1
+[Editor_1]
+CursorCol=18
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 CursorRow=5
 TopLine=1
 LeftChar=1
