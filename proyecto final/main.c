@@ -18,6 +18,7 @@ int main(int argc, char *argv[]) {
 		menu();
 		scanf("%d", &op);
 
+<<<<<<< Updated upstream
 		switch (op){
 			case 1:
 				suma = suma(polinomio1, polinomio2);
@@ -33,6 +34,14 @@ int main(int argc, char *argv[]) {
 				break;
 		}
 	}while (op <5);
+=======
+	sumar_polinomios(Lista[Cantidad_de_polinomios-2], Lista[Cantidad_de_polinomios-1], Lista[Cantidad_de_polinomios]);
+	imprimir_polinomio(Lista[Cantidad_de_polinomios]);
+	freeMemory(Lista[Cantidad_de_polinomios]);
+	//freeMemory(polinomio2);
+	//freeMemory(polinomioR);
+	//HOLO
+>>>>>>> Stashed changes
 
 	return 0;
 }
