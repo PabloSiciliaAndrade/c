@@ -7,17 +7,16 @@
 
 int main(int argc, char *argv[]) {
 	int Cantidad_de_polinomios = 0;
-	Polinomio *Lista[] = {(Polinomio*)malloc(sizeof(Polinomio))};
+	Polinomio *Lista[] = {(Polinomio*)malloc(sizeof(Polinomio)),(Polinomio*)malloc(sizeof(Polinomio))};
 
+	Cantidad_de_polinomios += 1;
+	definir_polinomio_nuevo(Lista[1]);
 
-	Cantidad_de_polinomios ++;
-	definir_polinomio_nuevo(Lista[Cantidad_de_polinomios]);
+	Cantidad_de_polinomios += 1;
+	definir_polinomio_nuevo(Lista[2]);
 
-	Cantidad_de_polinomios ++;
-	definir_polinomio_nuevo(Lista[Cantidad_de_polinomios]);
-
-	Cantidad_de_polinomios ++;
-	reservar_memoria(Lista[Cantidad_de_polinomios]);	
+	Cantidad_de_polinomios += 1;
+	reservar_memoria(Lista[Cantidad_de_polinomios]);
 
 	sumar_polinomios(Lista[Cantidad_de_polinomios-2], Lista[Cantidad_de_polinomios-1], Lista[Cantidad_de_polinomios]);
 	imprimir_polinomio(Lista[Cantidad_de_polinomios]);

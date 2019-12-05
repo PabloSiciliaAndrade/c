@@ -35,7 +35,7 @@ void imprimir_monomio(monomio *monomio){
 void imprimir_polinomio(Polinomio *polinomio){
 	monomio *Monox = polinomio->Monomio_menor; 
 	int i;
-	for (i = 0; i <=  polinomio->cantidad_de_monomios; ++i)
+	for (i = 0; i <  polinomio->cantidad_de_monomios; ++i)
 	{
 		imprimir_monomio(Monox);
 		Monox = Monox->siguiente;
@@ -154,6 +154,8 @@ void sumar_monomios(monomio *monomio1, monomio *monomio2, monomio *monomioR){
 	monomioR->exponente = monomio1->exponente;
 	}
 }
+
+
 void menu (){
 	printf("1: sumar polinomios \n");
 	printf("2: restar polinomios \n");
@@ -161,12 +163,16 @@ void menu (){
 	printf("4: dividir monomio entre polinomio \n");
 	printf("5: salir \n");
 }
+
+
 void definir_polinomio_nuevo(Polinomio *polinomio){
 	polinomio = ((Polinomio*)malloc(sizeof(Polinomio)));
 	polinomio->Monomio_menor = ((monomio*)malloc(sizeof(monomio))); 
 	leer_polinomio(polinomio);
 	ordenar(polinomio);
 }
+
+
 void reservar_memoria(Polinomio *polinomio){
 	polinomio = ((Polinomio*)malloc(sizeof(Polinomio)));
 	polinomio->Monomio_menor = ((monomio*)malloc(sizeof(monomio)));
