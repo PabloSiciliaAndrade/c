@@ -168,6 +168,7 @@ void sumar_monomios(monomio *monomio1, monomio *monomio2, monomio *monomioR){
 //Función sumar monomios, donde solamente compara los exponentes de los monomios a sumar y si estos coinciden, se suma sus coeficientes.
 
 void menu (){
+	printf("Hola, bienvenido a la calculadora de polinomios, selecciona una opcion\n");
 	printf("1: agregar polinomios\n");
 	printf("2: sumar polinomios \n");
 	printf("3: restar polinomios \n");
@@ -194,3 +195,38 @@ void reservar_memoria(Polinomio *polinomio){
 	polinomio->Monomio_menor = ((monomio*)malloc(sizeof(monomio)));
 }
 //La función resevar memoria, genera memoria para los polinomios y sus monomios con malloc.
+
+void dividir_monomios(monomio *monomio1, monomio *monomio2, monomio *monomioR){
+	if (monomio1->coeficiente != 0 &&  monomio2->coeficiente != 0)
+	{
+	monomioR->coeficiente = monomio1->coeficiente / monomio2->coeficiente;
+	monomioR->exponente = monomio1->exponente - monomio2->exponente;
+	}
+}
+
+//La función dividir monomios es simple, si los coeficientes son diferentes a 0 se efectua la división
+void division_polinomio_entre_monomio(Polinomio *polinomio1, monomio *monomio1, Polinomio *polinomioR){
+	
+	monomio *Monox, *Monox1, *Monox2;
+	Monox = polinomioR->Monomio_menor;
+	Monox1 = polinomio1->Monomio_menor;
+	Monox2 = monomio1;
+	int i, j;
+	for (i = 0; i <= polinomio1->cantidad_de_monomios; ++i)
+	{
+		Monox = polinomioR->Monomio_menor;
+		Monox1 = polinomio1->Monomio_menor;
+		if(Monox1->coeficiente!=0 && Monox2->coeficiente!=0){
+			Monox->siguiente = ((monomio*)malloc(sizeof(monomio)));
+			dividir_monomios(Monox1, Monox2, Monox);
+			Monox = Monox->siguiente;
+			Monox1 = Monox1->siguiente;
+		}else{
+			printf("La división no se puede realizar\n");
+		}
+		Monox1 = Monox1->siguiente;
+	}
+}
+		
+
+	

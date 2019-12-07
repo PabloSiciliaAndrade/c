@@ -6,17 +6,60 @@
 //subida numero 2
 
 int main(int argc, char *argv[]) {
+	int op;
+	Polinomio *polinomio1;
+	monomio *monomio1;
+	Polinomio *polinomioR;
 	int Cantidad_de_polinomios = 0;
-	Polinomio *Lista[] = {(Polinomio*)malloc(sizeof(Polinomio)),(Polinomio*)malloc(sizeof(Polinomio))};
-
-	Cantidad_de_polinomios += 1;
-	definir_polinomio_nuevo(Lista[1]);
-
-	Cantidad_de_polinomios += 1;
-	definir_polinomio_nuevo(Lista[2]);
-
-	Cantidad_de_polinomios += 1;
-	reservar_memoria(Lista[Cantidad_de_polinomios]);
+	Polinomio *Lista[] = {(Polinomio*)malloc(sizeof(Polinomio)),(Polinomio*)malloc(sizeof(Polinomio))};	
+	
+	while (op!= 0){
+		menu ();
+		scanf("%d", &op);
+		switch(op){
+			case 1:	
+			Cantidad_de_polinomios+= 1;
+			definir_polinomio_nuevo(Lista[1]);
+			imprimir_polinomio(Lista[1]);
+			break;
+			//agregar aqui la funcion agregar_polinomio
+			case 2:
+			Cantidad_de_polinomios += 1;
+			definir_polinomio_nuevo(Lista[1]);
+			Cantidad_de_polinomios += 1;
+			definir_polinomio_nuevo(Lista[2]);
+			sumar_polinomios(Lista[Cantidad_de_polinomios-2], Lista[Cantidad_de_polinomios-1], Lista[Cantidad_de_polinomios]);
+			//agregar aqui la funcion suma_polinomio
+			case 3:
+			Cantidad_de_polinomios += 1;
+			definir_polinomio_nuevo(Lista[1]);
+			Cantidad_de_polinomios += 1;
+			definir_polinomio_nuevo(Lista[2]);
+			//agregar aqui la funcion restar_polinomio
+			case 4:
+			Cantidad_de_polinomios += 1;
+			definir_polinomio_nuevo(Lista[1]);
+			Cantidad_de_polinomios += 1;
+			definir_polinomio_nuevo(Lista[2]);
+			//agregar aqui la funcion multiplicación polinomio
+			case 5:
+			definir_polinomio_nuevo(polinomio1);
+			leer_monomio(monomio1);
+			dividir_polinomio_entre_monomio(polinomio1,monomio1,polinomioR);
+			imprimir_polinomio(polinomioR);
+			//agregar aqui la funcion división polinomio entre monomio
+			case 6: 
+			//agregar aqui la funcion división polinomio entre binomio
+			case 7:
+			//agregar aqui la funcion cargar polinomio
+			case 8:
+			//agregar aqui la funcion guardar polinomio
+			case 9: 
+			//salir
+			default:
+				printf("Opcion no valida, intente de nuevo\n"); 
+		}
+	}
 
 	sumar_polinomios(Lista[Cantidad_de_polinomios-2], Lista[Cantidad_de_polinomios-1], Lista[Cantidad_de_polinomios]);
 	imprimir_polinomio(Lista[Cantidad_de_polinomios]);
