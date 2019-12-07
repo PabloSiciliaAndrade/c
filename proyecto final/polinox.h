@@ -1,5 +1,6 @@
 #ifndef POLINOX_H
 #define POLINOX_H
+//Empezamos definiendo las estructuras con un define POLINOX.H
 
 typedef struct monomios monomio;
 struct monomios {
@@ -7,12 +8,16 @@ struct monomios {
 	int exponente;
 	monomio *siguiente;
 };
+//Comentario sobre la estructura monomio: Usamos un decimal para definir el coeficiente, un entero para el exponente 
+//y un valor monomio tipo apuntador que almacena el siguiente monomio a introducir.
 
 typedef struct polinomios {
 	monomio *Monomio_menor;
 	int cantidad_de_monomios;
 	int potencia;
 }Polinomio;
+//Comentario sobre la estructura Polinomio: Usamos una variable monomio tipo apuntador llamada monomio menor que guarda el monomio de menor grado.
+//Y dos variables tipo entero para definir la cantidad de monomios y su potencia, usadas en las posteriores funciones.
 
 void definir_polinomio_nuevo(Polinomio *polinomio);
 void reservar_memoria(Polinomio *polinomio);
@@ -26,3 +31,4 @@ void ordenar(Polinomio *polinomio);
 void sumar_polinomios(Polinomio *polinomio1, Polinomio *polinomio2, Polinomio *PolinomioR);
 void sumar_monomios(monomio *monomio1, monomio * monomio2, monomio *monomioR);
 #endif
+//Prototipos de las funciones.

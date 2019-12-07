@@ -1,2 +1,0 @@
-4 //se define la funcion leer_monomio que recibe un apuntador de tipo monomio 
-5 //leemos el coeficiente, variable y potencia del monomio
