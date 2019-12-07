@@ -8,7 +8,9 @@
 int main(int argc, char *argv[]) {
 	int op;
 	Polinomio *polinomio1;
+	polinomio1 =(Polinomio*)malloc(sizeof(Polinomio));
 	monomio *monomio1;
+	monomio1 =(monomio*)malloc(sizeof(monomio));
 	Polinomio *polinomioR;
 	int Cantidad_de_polinomios = 0;
 	Polinomio *Lista[] = {(Polinomio*)malloc(sizeof(Polinomio)),(Polinomio*)malloc(sizeof(Polinomio))};	
@@ -29,32 +31,40 @@ int main(int argc, char *argv[]) {
 			Cantidad_de_polinomios += 1;
 			definir_polinomio_nuevo(Lista[2]);
 			sumar_polinomios(Lista[Cantidad_de_polinomios-2], Lista[Cantidad_de_polinomios-1], Lista[Cantidad_de_polinomios]);
+			break;
 			//agregar aqui la funcion suma_polinomio
 			case 3:
 			Cantidad_de_polinomios += 1;
 			definir_polinomio_nuevo(Lista[1]);
 			Cantidad_de_polinomios += 1;
 			definir_polinomio_nuevo(Lista[2]);
+			break;
 			//agregar aqui la funcion restar_polinomio
 			case 4:
 			Cantidad_de_polinomios += 1;
 			definir_polinomio_nuevo(Lista[1]);
 			Cantidad_de_polinomios += 1;
 			definir_polinomio_nuevo(Lista[2]);
+			break;
 			//agregar aqui la funcion multiplicación polinomio
 			case 5:
 			definir_polinomio_nuevo(polinomio1);
 			leer_monomio(monomio1);
 			dividir_polinomio_entre_monomio(polinomio1,monomio1,polinomioR);
 			imprimir_polinomio(polinomioR);
+			break;
 			//agregar aqui la funcion división polinomio entre monomio
-			case 6: 
+			case 6:
+			break; 
 			//agregar aqui la funcion división polinomio entre binomio
 			case 7:
+			break;
 			//agregar aqui la funcion cargar polinomio
 			case 8:
+			break;
 			//agregar aqui la funcion guardar polinomio
-			case 9: 
+			case 9:
+			break; 
 			//salir
 			default:
 				printf("Opcion no valida, intente de nuevo\n"); 

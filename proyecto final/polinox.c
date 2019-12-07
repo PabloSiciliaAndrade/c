@@ -227,6 +227,9 @@ void division_polinomio_entre_monomio(Polinomio *polinomio1, monomio *monomio1, 
 		Monox1 = Monox1->siguiente;
 	}
 }
-		
+//En la función división de polinomio entre monomio, asignamos monomios temporales que son los Monoxs, donde por medio de un for
+//recorremos los monomios del polinomio hasta que sean la cantidad de monomios asignados; ahora hacemos la comparacion de coeficientes diferentes a 0
+//para evitar cualquier problema con una division entre 0, aasignamos memoria para cada monomio del monox resultado y llamamos a la funcion dividir monomios
+//para que vaya dividiendo monomio por monomio. En caso de que algun coeficiente sea 0, se imprime que no se puede realizar.		
 
 	
