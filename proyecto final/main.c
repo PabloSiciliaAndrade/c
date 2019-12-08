@@ -7,11 +7,8 @@
 
 int main(int argc, char *argv[]) {
 	int op;
-	Polinomio *polinomio1;
-	polinomio1 =(Polinomio*)malloc(sizeof(Polinomio));
 	monomio *monomio1;
-	monomio1 =(monomio*)malloc(sizeof(monomio));
-	Polinomio *polinomioR;
+	monomio1=(monomio*)malloc(sizeof(monomio));
 	int Cantidad_de_polinomios = 0;
 	Polinomio *Lista[] = {(Polinomio*)malloc(sizeof(Polinomio)),(Polinomio*)malloc(sizeof(Polinomio))};	
 	
@@ -48,7 +45,8 @@ int main(int argc, char *argv[]) {
 			break;
 			//agregar aqui la funcion multiplicación polinomio
 			case 5:
-			definir_polinomio_nuevo(polinomio1);
+			Cantidad_de_polinomios += 1;
+			definir_polinomio_nuevo(Lista[1]);
 			leer_monomio(monomio1);
 			dividir_polinomio_entre_monomio(polinomio1,monomio1,polinomioR);
 			imprimir_polinomio(polinomioR);
@@ -64,6 +62,7 @@ int main(int argc, char *argv[]) {
 			break;
 			//agregar aqui la funcion guardar polinomio
 			case 9:
+
 			break; 
 			//salir
 			default:
