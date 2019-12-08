@@ -73,12 +73,5 @@ int main(int argc, char *argv[]) {
 				printf("Opcion no valida, intente de nuevo\n"); 
 		}
 	}
-
-	sumar_polinomios(Lista[Cantidad_de_polinomios-2], Lista[Cantidad_de_polinomios-1], Lista[Cantidad_de_polinomios]);
-	imprimir_polinomio(Lista[Cantidad_de_polinomios]);
-	
-	//freeMemory(polinomio2);
-	//freeMemory(polinomioR);
-
 	return 0;
 }
