@@ -34,6 +34,7 @@ void restar_polinomios(Polinomio *polinomio1, Polinomio *polinomio2, Polinomio *
 void restar_monomios(monomio *monomio1, monomio * monomio2, monomio *monomioR);
 void multiplicar_polinomios(Polinomio *polinomio1, Polinomio *polinomio2, Polinomio *PolinomioR);
 void multiplicar_monomios(monomio *monomio1, monomio * monomio2, monomio *monomioR);
+void dividir_monomios(monomio *monomio1, monomio * monomio2, monomio *monomioR);
 void dividir_polinomios_entre_monomio(Polinomio *polinomio1, monomio *monomio1, Polinomio *PolinomioR);
 void dividir_polinomio_entre_binomio();
 #endif

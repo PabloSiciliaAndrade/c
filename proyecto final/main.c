@@ -50,7 +50,7 @@ int main(int argc, char *argv[]) {
 			Cantidad_de_polinomios += 1;
 			definir_polinomio_nuevo(Lista[1]);
 			leer_monomio(monomio1);
-			dividir_polinomio_entre_monomio(Lista[1],monomio1,Lista[Cantidad_de_polinomios]);
+			division_polinomio_entre_monomio(Lista[1],monomio1,Lista[Cantidad_de_polinomios]);
 			imprimir_polinomio(Lista[Cantidad_de_polinomios]);
 			break;
 			//agregar aqui la funcion división polinomio entre monomio
