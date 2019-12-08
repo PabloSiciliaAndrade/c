@@ -172,7 +172,33 @@ void restar_monomios(monomio *monomio1, monomio *monomio2, monomio *monomioR){
 	monomioR->coeficiente = monomio1->coeficiente - monomio2->coeficiente;
 	monomioR->exponente = monomio1->exponente;
 	}
+}
 //Función restar monomios que es lo mismo que sumar monomios.
+
+void restar_polinomios(Polinomio *polinomio1, Polinomio *polinomio2, Polinomio *polinomioR){
+
+	monomio *Monox, *Monox1, *Monox2;
+	Monox = polinomioR->Monomio_menor;
+	Monox1 = polinomio1->Monomio_menor;
+	Monox2 = polinomio2->Monomio_menor;
+	int i, j;
+	for (i = 0; i <= polinomio1->cantidad_de_monomios; ++i)
+	{
+		Monox = polinomioR->Monomio_menor;
+		Monox2 = polinomio2->Monomio_menor;
+		
+		for (j = 0; j <= polinomio2->cantidad_de_monomios; ++j)
+		{
+			Monox->siguiente = ((monomio*)malloc(sizeof(monomio)));
+			restar_monomios(Monox1, Monox2, Monox);
+			Monox = Monox->siguiente;
+			Monox2 = Monox2->siguiente;
+		}
+		Monox1 = Monox1->siguiente;
+	}
+}
+//La función restar polinomios busca recorrer la lista de monomios que se encuentra en cada polinomio, por medio de 2 ciclos for.
+//Para despues realizar la función restar_monomios en cada monomio afin que se encuentre.
 void menu (){
 	printf("Hola, bienvenido a la calculadora de polinomios, selecciona una opcion\n");
 	printf("1: agregar polinomios\n");

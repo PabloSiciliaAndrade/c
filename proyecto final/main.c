@@ -29,7 +29,6 @@ int main(int argc, char *argv[]) {
 			definir_polinomio_nuevo(Lista[2]);
 			sumar_polinomios(Lista[Cantidad_de_polinomios-2], Lista[Cantidad_de_polinomios-1], Lista[Cantidad_de_polinomios]);
 			imprimir_polinomio(Lista[Cantidad_de_polinomios]);
-	
 			break;
 			//agregar aqui la funcion suma_polinomio
 			case 3:
@@ -37,6 +36,8 @@ int main(int argc, char *argv[]) {
 			definir_polinomio_nuevo(Lista[1]);
 			Cantidad_de_polinomios += 1;
 			definir_polinomio_nuevo(Lista[2]);
+			restar_polinomios(Lista[Cantidad_de_polinomios-2], Lista[Cantidad_de_polinomios-1], Lista[Cantidad_de_polinomios]);
+			imprimir_polinomio(Lista[Cantidad_de_polinomios]);
 			break;
 			//agregar aqui la funcion restar_polinomio
 			case 4:
