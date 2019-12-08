@@ -166,7 +166,13 @@ void sumar_monomios(monomio *monomio1, monomio *monomio2, monomio *monomioR){
 	}
 }
 //Función sumar monomios, donde solamente compara los exponentes de los monomios a sumar y si estos coinciden, se suma sus coeficientes.
-
+void restar_monomios(monomio *monomio1, monomio *monomio2, monomio *monomioR){
+	if (monomio1->exponente = monomio2->exponente)
+	{
+	monomioR->coeficiente = monomio1->coeficiente - monomio2->coeficiente;
+	monomioR->exponente = monomio1->exponente;
+	}
+//Función restar monomios que es lo mismo que sumar monomios.
 void menu (){
 	printf("Hola, bienvenido a la calculadora de polinomios, selecciona una opcion\n");
 	printf("1: agregar polinomios\n");
@@ -196,6 +202,11 @@ void reservar_memoria(Polinomio *polinomio){
 }
 //La función resevar memoria, genera memoria para los polinomios y sus monomios con malloc.
 
+void multiplicar_monomios(monomio *monomio1, monomio *monomio2, monomio *monomioR){
+	monomioR->coeficiente = monomio1->coeficiente * monomio2->coeficiente;
+	monomioR->exponente = monomio1->exponente + monomio2->exponente;
+}
+//La función multiplicar monomios multiplica los coeficientes de los monomios y suma sus exponentes.
 void dividir_monomios(monomio *monomio1, monomio *monomio2, monomio *monomioR){
 	if (monomio1->coeficiente != 0 &&  monomio2->coeficiente != 0)
 	{

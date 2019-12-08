@@ -28,6 +28,7 @@ int main(int argc, char *argv[]) {
 			Cantidad_de_polinomios += 1;
 			definir_polinomio_nuevo(Lista[2]);
 			sumar_polinomios(Lista[Cantidad_de_polinomios-2], Lista[Cantidad_de_polinomios-1], Lista[Cantidad_de_polinomios]);
+			imprimir_polinomio(polinomioR);
 			break;
 			//agregar aqui la funcion suma_polinomio
 			case 3:
@@ -62,7 +63,8 @@ int main(int argc, char *argv[]) {
 			break;
 			//agregar aqui la funcion guardar polinomio
 			case 9:
-
+			freeMemory(Lista[Cantidad_de_polinomios]);
+			printf("Gracias por usar la calculadora de polinomios, hasta luego\n");
 			break; 
 			//salir
 			default:
@@ -72,7 +74,7 @@ int main(int argc, char *argv[]) {
 
 	sumar_polinomios(Lista[Cantidad_de_polinomios-2], Lista[Cantidad_de_polinomios-1], Lista[Cantidad_de_polinomios]);
 	imprimir_polinomio(Lista[Cantidad_de_polinomios]);
-	freeMemory(Lista[Cantidad_de_polinomios]);
+	
 	//freeMemory(polinomio2);
 	//freeMemory(polinomioR);
 
