@@ -45,6 +45,7 @@ int main(int argc, char *argv[]) {
 			definir_polinomio_nuevo(Lista[1]);
 			Cantidad_de_polinomios += 1;
 			definir_polinomio_nuevo(Lista[2]);
+			multiplicar_polinomios(Lista[1],Lista[2]);
 			break;
 			//agregar aqui la funcion multiplicación polinomio
 			case 5:

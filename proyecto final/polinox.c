@@ -304,13 +304,37 @@ printf("\n\nSe ha leido el archivo correctamente");
 }
 //la función lectura_de_archivo permite utilizar un archivo externo, .txt con un polinomio dentro, para utilizar su información dentro de la caclculadora, 
 //la información se guarda en una variable llamada polinomio
- void multiplicar_polinomios (Polinomio *polinomio1, Polinomio *polinomio2, Polinomio *PolinomioR){
- 	Polinomio *polinomiot = (Polinomio*) malloc (sizeof (Polinomio));
- 	for ((Polinomio *polinomio1->Monomio_menor);(Polinomio *polinomio1-monomio.siguiente!=0);(Polinomio *polinomio1-monomio.siguiente++){
-	  	for((Polinomio *polinomio2->Monomio_menor);(Polinomio *polinomio-monomio.siguiente!=0); (Polinomio *polonomio2-monomio.siguiente++)){
- 		Polinomio *polinomiot.Monomio_menor.coeficiente = (polinomio1.Monomio_menor.coeficiente * polinomio2.Monomio_menor.coeficient);
- 		Polinomio *polinomiot.Monomio_menor.exponente = (polinomio1.Monomio_menor.exponente + polinomio2.Monomio_menor.exponente);
+
+ //void multiplicar_polinomios (Polinomio *polinomio1, Polinomio *polinomio2, Polinomio *PolinomioR){
+ 	//Polinomio *polinomiot = (Polinomio*) malloc (sizeof (Polinomio));
+ 	//for ((polinomio1->Monomio_menor);(polinomio1-monomio.siguiente!=0);(polinomio1-monomio.siguiente++){
+	  	//for((polinomio2->Monomio_menor);(polinomio-monomio.siguiente!=0); (polonomio2-monomio.siguiente++)){
+ 		//Polinomio *polinomiot.Monomio_menor.coeficiente = (polinomio1.Monomio_menor.coeficiente * polinomio2.Monomio_menor.coeficient);
+ 		//Polinomio *polinomiot.Monomio_menor.exponente = (polinomio1.Monomio_menor.exponente + polinomio2.Monomio_menor.exponente);
+		//}
+ 	//}
+ //}
+void multiplicar_polinomios (Polinomio *polinomio1, Polinomio *polinomio2, Polinomio *PolinomioR){
+
+	monomio *Monox, *Monox1, *Monox2;
+	Monox = polinomioR->Monomio_menor;
+	Monox1 = polinomio1->Monomio_menor;
+	Monox2 = polinomio2->Monomio_menor;
+	int i, j;
+	for (i = 0; i <= polinomio1->cantidad_de_monomios; ++i)
+	{
+		Monox = polinomioR->Monomio_menor;
+		Monox2 = polinomio2->Monomio_menor;
+		
+		for (j = 0; j <= polinomio2->cantidad_de_monomios; ++j)
+		{
+			Monox->siguiente = ((monomio*)malloc(sizeof(monomio)));
+			multiplicar_monomios(Monox1, Monox2, Monox);
+			Monox = Monox->siguiente;
+			Monox2 = Monox2->siguiente;
 		}
- 	}
- }
-	
+		Monox1 = Monox1->siguiente;
+	}
+}	
+//En esta función intentamos por dos caminos, con dos ciclos for que lograran recorrer todos los monomios y poder ejecutar la funcion multiplicacion de monomios
+//Y el otro camino que termino siendo el comentado, fue que por medio de 2 ciclos for recorriamos la lista hasta llegar al monomio de menor grado y de ahi realizar la multiplicacion.
