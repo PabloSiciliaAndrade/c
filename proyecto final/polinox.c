@@ -303,5 +303,15 @@ fclose(flujo);
 printf("\n\nSe ha leido el archivo correctamente");
 	}
 }
-
+//la función lectura_de_archivo permite utilizar un archivo externo, .txt con un polinomio dentro, para utilizar su información dentro de la caclculadora, 
+//la información se guarda en una variable llamada polinomio
+ void multiplicar_polinomios (Polinomio *polinomio1, Polinomio *polinomio2, Polinomio *PolinomioR){
+ 	Polinomio *polinomiot = (*polinomio) malloc (sizeof (Polinomio));
+ 	for (Polinomio *polinomio1->Monomio_menor;Polinomio *polinomio1-monomio.siguiente!=0;Polinomio *polinomio1-monomio.siguiente++){
+	  	for(Polinomio *polinomio2->Monomio_menor;Polinomio *polinomio-monomio.siguiente!=0; polinomio *polonomio2-monomio.siguiente++){
+ 		Polinomio *polinomiot.Monomio_menor.coeficiente = (polinomio1.Monomio_menor.coeficiente * polinomio2.Monomio_menor.coeficient);
+ 		Polinomio *polinomiot.Monomio_menor.exponente = (polinomio1.Monomio_menor.exponente + polinomio2.Monomio_menor.exponente);
+		}
+ 	}
+ }
 	
