@@ -193,35 +193,42 @@ void sumar_monomios(monomio *monomio1, monomio *monomio2, monomio *monomioR){
 	}
 }
 
+	
 
-
-
-/*Añadir archivos*/
-void filecopy(FILE*, FILE*){
-	FILE *fp;
-	if(arg ==1)
-		.filecopy(stdin, stdout);
-	else
-		while ( argc>0)
-			if((fp=fopen(*++argv,"r"))==NULL){
-				printf("archivo no se puede abrir %s\n" *argv);
-				return 1;
-		}else{
-			filecopyfp,stdout);
-			fclose(fp);
-		}
-	return 0;
+void lectura_de_archivo(){
+	FILE *flujo=fopen("polinomio.txt", "rw");
+	if (flujo==NULL){
+		printf("Error en la apertura del archivo\n");
 	}
-/*copiararchivo: copia el archivo ifp al archivo ofp*/
-void filecopy(FILE *ifp, FILE *ofp)
-{
-	int c;
-	Polinomio polinomio1;
-	while ((c=getp(ifp))!=EOF)
-		putc(c, polinomio1);
+	Polinomio *polinomio_archivo;
+	fseek(flujo,0,SEEK_END);
+	int cantidad_de_monomios =ftell(flujo)/3;
+	rewind (flujo);
+	
+	Polinomio *polinomio = (polinomio); calloc(sizeof (polinomio), cantidad_de_monomios);
+	if (polinomio_archivo== NULL){
+		printf("Error al reservar memoria");
+	}
+	int num_elementos_leidos = fread (polinomio, sizeof(polinomio), cantidad_de_monomios, flujo);
+	if (num_elementos_leidos != cantidad_de_monomios*3){
+		printf("Error al leer el archivo"); 
+	}
+	while (feof(flujo)==0){
+	fscanf ("%d", &polinomio_archivo->cantidad_de_monomios);
+	int i;
+	monomio *Monox = polinomio->Monomio_menor; 
+	for (i = 0; i < polinomio->cantidad_de_monomios; ++i)
+	{
+		Monox->siguiente = (monomio*) malloc(sizeof(monomio));
+		leer_monomio(Monox);
+		Monox = Monox->siguiente;
+	void imprimir_polinomio(polinomio);
+	}
+free (polinomio);
+fclose(flujo);
+printf("\n\nSe ha leido el archivo correctamente");
+	}
 }
-
-
 
 
 
