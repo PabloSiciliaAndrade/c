@@ -155,6 +155,7 @@ void sumar_polinomios(Polinomio *polinomio1, Polinomio *polinomio2, Polinomio *p
 		}
 		Monox1 = Monox1->siguiente;
 	}
+	return polinomioR;
 }
 
 
@@ -196,6 +197,7 @@ void restar_polinomios(Polinomio *polinomio1, Polinomio *polinomio2, Polinomio *
 		}
 		Monox1 = Monox1->siguiente;
 	}
+	return polinomioR;
 }
 //La función restar polinomios busca recorrer la lista de monomios que se encuentra en cada polinomio, por medio de 2 ciclos for.
 //Para despues realizar la función restar_monomios en cada monomio afin que se encuentre.
@@ -263,6 +265,7 @@ void division_polinomio_entre_monomio(Polinomio *polinomio1, monomio *monomio1, 
 		}
 		Monox1 = Monox1->siguiente;
 	}
+	return polinomioR;
 }
 //En la función división de polinomio entre monomio, asignamos monomios temporales que son los Monoxs, donde por medio de un for
 //recorremos los monomios del polinomio hasta que sean la cantidad de monomios asignados; ahora hacemos la comparacion de coeficientes diferentes a 0
@@ -315,7 +318,7 @@ printf("\n\nSe ha leido el archivo correctamente");
  	//}
  //}
 void multiplicar_polinomios (Polinomio *polinomio1, Polinomio *polinomio2, Polinomio *PolinomioR){
-
+	Polinomio *polinomioR;
 	monomio *Monox, *Monox1, *Monox2;
 	Monox = polinomioR->Monomio_menor;
 	Monox1 = polinomio1->Monomio_menor;
@@ -335,6 +338,7 @@ void multiplicar_polinomios (Polinomio *polinomio1, Polinomio *polinomio2, Polin
 		}
 		Monox1 = Monox1->siguiente;
 	}
+	return polinomioR;
 }	
 //En esta función intentamos por dos caminos, con dos ciclos for que lograran recorrer todos los monomios y poder ejecutar la funcion multiplicacion de monomios
 //Y el otro camino que termino siendo el comentado, fue que por medio de 2 ciclos for recorriamos la lista hasta llegar al monomio de menor grado y de ahi realizar la multiplicacion.
