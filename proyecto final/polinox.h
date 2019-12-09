@@ -24,5 +24,5 @@ void freeMemory(Polinomio *polinomio);
 void ordenar(Polinomio *polinomio);
 void sumar_polinomios(Polinomio *polinomio1, Polinomio *polinomio2, Polinomio *PolinomioR);
 void sumar_monomios(monomio *monomio1, monomio * monomio2, monomio *monomioR);
-void copiararchivo(ARCHIVO*, ARCHIVO*);
+void lectura_de_archivo ();
 #endif
