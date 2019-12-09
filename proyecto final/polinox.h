@@ -37,5 +37,6 @@ void multiplicar_monomios(monomio *monomio1, monomio * monomio2, monomio *monomi
 void dividir_monomios(monomio *monomio1, monomio * monomio2, monomio *monomioR);
 void dividir_polinomios_entre_monomio(Polinomio *polinomio1, monomio *monomio1, Polinomio *PolinomioR);
 void dividir_polinomio_entre_binomio();
+void lectura_de_archivo();
 #endif
 //Prototipos de las funciones.

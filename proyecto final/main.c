@@ -60,8 +60,11 @@ int main(int argc, char *argv[]) {
 			//agregar aqui la funcion división polinomio entre binomio
 			case 7:
 			break;
+			lectura_de_archivo();
 			//agregar aqui la funcion cargar polinomio
 			case 8:
+			Cantidad_de_polinomios += 1;
+			definir_polinomio_nuevo(Lista[1]);
 			break;
 			//agregar aqui la funcion guardar polinomio
 			case 9:

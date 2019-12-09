@@ -269,4 +269,39 @@ void division_polinomio_entre_monomio(Polinomio *polinomio1, monomio *monomio1, 
 //para evitar cualquier problema con una division entre 0, aasignamos memoria para cada monomio del monox resultado y llamamos a la funcion dividir monomios
 //para que vaya dividiendo monomio por monomio. En caso de que algun coeficiente sea 0, se imprime que no se puede realizar.		
 
+void lectura_de_archivo(){
+	FILE *flujo=fopen("polinomio.txt", "rw");
+	if (flujo==NULL){
+		printf("Error en la apertura del archivo\n");
+	}
+	Polinomio *polinomio_archivo;
+	fseek(flujo,0,SEEK_END);
+	int cantidad_de_monomios =ftell(flujo)/3;
+	rewind (flujo);
+	
+	Polinomio *polinomio = (polinomio); calloc(sizeof (polinomio), cantidad_de_monomios);
+	if (polinomio_archivo== NULL){
+		printf("Error al reservar memoria");
+	}
+	int num_elementos_leidos = fread (polinomio, sizeof(polinomio), cantidad_de_monomios, flujo);
+	if (num_elementos_leidos != cantidad_de_monomios*3){
+		printf("Error al leer el archivo"); 
+	}
+	while (feof(flujo)==0){
+	fscanf ("%d", &polinomio_archivo->cantidad_de_monomios);
+	int i;
+	monomio *Monox = polinomio->Monomio_menor; 
+	for (i = 0; i < polinomio->cantidad_de_monomios; ++i)
+	{
+		Monox->siguiente = (monomio*) malloc(sizeof(monomio));
+		leer_monomio(Monox);
+		Monox = Monox->siguiente;
+	void imprimir_polinomio(polinomio);
+	}
+free (polinomio);
+fclose(flujo);
+printf("\n\nSe ha leido el archivo correctamente");
+	}
+}
+
 	
