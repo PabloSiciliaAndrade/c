@@ -7,7 +7,7 @@ void leer_monomio(monomio *monomio1){
 	printf("introduzca los valores de su monomio:\n" );
 	scanf("%g %d", &monomio1->coeficiente, &monomio1->exponente);
 }
-//La funci髇 leer monomio le pide al usuario que introduzca los valores del monomio, coeficiente y exponente, para despues escanearlos.
+//La funci贸n leer monomio le pide al usuario que introduzca los valores del monomio, coeficiente y exponente, para despues escanearlos.
 
 void leer_polinomio(Polinomio *polinomio){
 	printf("introduzca la cantidad de monomios que tiene su polinomio\n");
@@ -21,7 +21,7 @@ void leer_polinomio(Polinomio *polinomio){
 		Monox = Monox->siguiente;
 	}
 }
-//En la funci髇 leer polinomio, utilizamos la subvariable de la estructura polinomio "cantidad de monomios" y el entero i
+//En la funci贸n leer polinomio, utilizamos la subvariable de la estructura polinomio "cantidad de monomios" y el entero i
 //para compararlos en un ciclo for, donde despues de declarar una variable monomio tipo apuntador (llamada Monox) e igualarla a la subvariable polinomio.monomio_menor,
 //asignamos memoria por medio de malloc para cada monomio, llamamos la funcion leer monomio para escanear los valores de Monox y recorremos monox al monomio siguiente (que es un apuntador).
 
@@ -33,7 +33,7 @@ void imprimir_monomio(monomio *monomio){
 		printf(" +%g X^%d ",monomio->coeficiente, monomio->exponente );
 	}
 }
-//En la funci髇 imprimir monomio, no solo imprimimos el monomio en si, sino que por medio de un if buscamos si su coeficiente es positivo o negativo
+//En la funci贸n imprimir monomio, no solo imprimimos el monomio en si, sino que por medio de un if buscamos si su coeficiente es positivo o negativo
 //para imprimirlo con su signo correspondiente.
 
 void imprimir_polinomio(Polinomio *polinomio){
@@ -46,12 +46,12 @@ void imprimir_polinomio(Polinomio *polinomio){
 	}
 	printf("\n");
 }
-//En la funci髇 imprimir polinomio, utilizamos un monomio temporal tipo apuntador (Monox) que lo dirigimos a la subvariable monomio_menor,
-//donde usando la cantidad de monomios antes especificada y una entero (i), generamos un for que llame la funci髇 imprimir monomio
+//En la funci贸n imprimir polinomio, utilizamos un monomio temporal tipo apuntador (Monox) que lo dirigimos a la subvariable monomio_menor,
+//donde usando la cantidad de monomios antes especificada y una entero (i), generamos un for que llame la funci贸n imprimir monomio
 //la cantidad de veces que sean la cantidad de monomios especificados, para despues recorrer Monox a monox_siguiente.
 
 void ordenar(Polinomio *polinomio){
-//La funci髇 ordenar polinomios se divide en 3 partes:
+//La funci贸n ordenar polinomios se divide en 3 partes:
 	int potencia, i, j;
 	monomio *Monox = polinomio->Monomio_menor;
 
@@ -112,7 +112,7 @@ void ordenar(Polinomio *polinomio){
 	}
 	polinomio->cantidad_de_monomios = polinomio->potencia;
 }
-//Concluimos esta funci髇 con 2 ciclos for, donde el primero se encarga de comparar la lista de monomios anterior creada con los monomios introducidos.
+//Concluimos esta funci贸n con 2 ciclos for, donde el primero se encarga de comparar la lista de monomios anterior creada con los monomios introducidos.
 //Si los exponentes del monomio real como el monomio temporal de la lista coincidian, se asignaban el coeficiente real al coeficiente del monomio temporal, asi pasando datos a la lista.
 
 
@@ -131,7 +131,7 @@ void freeMemory(Polinomio *polinomio){
 		}
 	}
 }
-//En la funci髇 freeMemory, liberamos memoria al momento de recorrer el conjunto polinomio, donde buscariamos que el monox siguiente equivaliera a 0.
+//En la funci贸n freeMemory, liberamos memoria al momento de recorrer el conjunto polinomio, donde buscariamos que el monox siguiente equivaliera a 0.
 //Una vez que encontraramos el monomio 0, a partir de ahi podriamos empezar a liberar memoria para limpiar completamente el polinomio.
 
 void sumar_polinomios(Polinomio *polinomio1, Polinomio *polinomio2, Polinomio *polinomioR){
@@ -165,14 +165,15 @@ void sumar_monomios(monomio *monomio1, monomio *monomio2, monomio *monomioR){
 	monomioR->exponente = monomio1->exponente;
 	}
 }
-//Funci髇 sumar monomios, donde solamente compara los exponentes de los monomios a sumar y si estos coinciden, se suma sus coeficientes.
+//Funci贸n sumar monomios, donde solamente compara los exponentes de los monomios a sumar y si estos coinciden, se suma sus coeficientes.
 void restar_monomios(monomio *monomio1, monomio *monomio2, monomio *monomioR){
 	if (monomio1->exponente = monomio2->exponente)
 	{
 	monomioR->coeficiente = monomio1->coeficiente - monomio2->coeficiente;
 	monomioR->exponente = monomio1->exponente;
 	}
-//Funci髇 restar monomios que es lo mismo que sumar monomios.
+}
+//Funci贸n restar monomios que es lo mismo que sumar monomios.
 void menu (){
 	printf("Hola, bienvenido a la calculadora de polinomios, selecciona una opcion\n");
 	printf("1: agregar polinomios\n");
@@ -185,7 +186,7 @@ void menu (){
 	printf("8: guardar polinomio\n");
 	printf("9: salir \n");
 }
-//Funci髇 menu, que despliega las opciones que indican las diferentes funciones que la calculadora puede realizar.
+//Funci贸n menu, que despliega las opciones que indican las diferentes funciones que la calculadora puede realizar.
 
 void definir_polinomio_nuevo(Polinomio *polinomio){
 	polinomio = ((Polinomio*)malloc(sizeof(Polinomio)));
@@ -193,20 +194,20 @@ void definir_polinomio_nuevo(Polinomio *polinomio){
 	leer_polinomio(polinomio);
 	ordenar(polinomio);
 }
-//Funci髇 definir polinomio nueva: Esta funci髇 genera la memoria necesaria para el polinomio y subvariable monomio menor, para despues llamar a
-//la funci髇 leer polinomio y ordenar polinomio.
+//Funci贸n definir polinomio nueva: Esta funci贸n genera la memoria necesaria para el polinomio y subvariable monomio menor, para despues llamar a
+//la funci贸n leer polinomio y ordenar polinomio.
 
 void reservar_memoria(Polinomio *polinomio){
 	polinomio = ((Polinomio*)malloc(sizeof(Polinomio)));
 	polinomio->Monomio_menor = ((monomio*)malloc(sizeof(monomio)));
 }
-//La funci髇 resevar memoria, genera memoria para los polinomios y sus monomios con malloc.
+//La funci贸n resevar memoria, genera memoria para los polinomios y sus monomios con malloc.
 
 void multiplicar_monomios(monomio *monomio1, monomio *monomio2, monomio *monomioR){
 	monomioR->coeficiente = monomio1->coeficiente * monomio2->coeficiente;
 	monomioR->exponente = monomio1->exponente + monomio2->exponente;
 }
-//La funci髇 multiplicar monomios multiplica los coeficientes de los monomios y suma sus exponentes.
+//La funci贸n multiplicar monomios multiplica los coeficientes de los monomios y suma sus exponentes.
 void dividir_monomios(monomio *monomio1, monomio *monomio2, monomio *monomioR){
 	if (monomio1->coeficiente != 0 &&  monomio2->coeficiente != 0)
 	{
@@ -215,8 +216,8 @@ void dividir_monomios(monomio *monomio1, monomio *monomio2, monomio *monomioR){
 	}
 }
 
-//La funci髇 dividir monomios es simple, si los coeficientes son diferentes a 0 se efectua la divisi髇
-void division_polinomio_entre_monomio(Polinomio *polinomio1, monomio *monomio1, Polinomio *polinomioR){
+//La funci贸n dividir monomios es simple, si los coeficientes son diferentes a 0 se efectua la divisi贸n
+void division_polinomios_entre_monomio(Polinomio *polinomio1, monomio *monomio1, Polinomio *polinomioR){
 	
 	monomio *Monox, *Monox1, *Monox2;
 	Monox = polinomioR->Monomio_menor;
@@ -233,14 +234,16 @@ void division_polinomio_entre_monomio(Polinomio *polinomio1, monomio *monomio1, 
 			Monox = Monox->siguiente;
 			Monox1 = Monox1->siguiente;
 		}else{
-			printf("La divisi髇 no se puede realizar\n");
+			printf("La divisi贸n no se puede realizar\n");
 		}
 		Monox1 = Monox1->siguiente;
 	}
 }
-//En la funci髇 divisi髇 de polinomio entre monomio, asignamos monomios temporales que son los Monoxs, donde por medio de un for
+//En la funci贸n divisi贸n de polinomio entre monomio, asignamos monomios temporales que son los Monoxs, donde por medio de un for
 //recorremos los monomios del polinomio hasta que sean la cantidad de monomios asignados; ahora hacemos la comparacion de coeficientes diferentes a 0
 //para evitar cualquier problema con una division entre 0, aasignamos memoria para cada monomio del monox resultado y llamamos a la funcion dividir monomios
 //para que vaya dividiendo monomio por monomio. En caso de que algun coeficiente sea 0, se imprime que no se puede realizar.		
 
 	
+
+

@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "polinox.h"
+#include "polinox.c"
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 //subida numero 2
@@ -50,7 +50,7 @@ int main(int argc, char *argv[]) {
 			Cantidad_de_polinomios += 1;
 			definir_polinomio_nuevo(Lista[1]);
 			leer_monomio(monomio1);
-			division_polinomio_entre_monomio(Lista[1],monomio1,Lista[Cantidad_de_polinomios]);
+			division_polinomios_entre_monomio(Lista[1], monomio1, Lista[Cantidad_de_polinomios]);
 			imprimir_polinomio(Lista[Cantidad_de_polinomios]);
 			break;
 			//agregar aqui la funcion división polinomio entre monomio
@@ -75,9 +75,10 @@ int main(int argc, char *argv[]) {
 
 	sumar_polinomios(Lista[Cantidad_de_polinomios-2], Lista[Cantidad_de_polinomios-1], Lista[Cantidad_de_polinomios]);
 	imprimir_polinomio(Lista[Cantidad_de_polinomios]);
-	
 	//freeMemory(polinomio2);
 	//freeMemory(polinomioR);
 
 	return 0;
 }
+
+
