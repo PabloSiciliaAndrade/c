@@ -15,14 +15,9 @@ int main(int argc, char *argv[]) {
 	Lista[Cantidad_de_polinomios]->Monomio_menor = ((monomio*)malloc(sizeof(monomio))); 
 	//Polinomio*) realloc(Lista, Cantidad_de_polinomios * sizeof(Polinomio)
  	
-	//reservar_memoria(Lista->polinomio);
-	leer_polinomio(Lista[Cantidad_de_polinomios]);
-	ordenar(Lista[Cantidad_de_polinomios]);
+ 	lectura_de_archivo();
+ 	
 	
-	imprimir_polinomio(Lista[Cantidad_de_polinomios]);
-	//sumar_polinomios(polinomio1, polinomio2, polinomioR);
-	//imprimir_polinomio(polinomioR);
-
 	//freeMemory(polinomio1);
 	//freeMemory(polinomio2);
 	//freeMemory(polinomioR);
